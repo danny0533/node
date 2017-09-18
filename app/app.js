@@ -9,6 +9,11 @@ app.get("/",function(req,res){
     console.log(__dirname);
 });
 
+app.get("/home",function(req,res){
+    res.sendFile(__dirname + '/home.html');
+    console.log(__dirname);
+});
+
 app.get("/test",function(req,res){
     res.send("This is a page");
 });
