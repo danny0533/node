@@ -22,7 +22,7 @@ app.post("/sendform",function(req,res){
 });
 
 app.get("/ajax",function(req,res){
-    res.send("hello");
+    res.send(req.query.bike + "nice bike" + req.query.country + "nice country");
 });
 
 app.listen(3000, function(){

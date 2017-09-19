@@ -21,14 +21,14 @@
             })
 
             function ajaxMe(){
-                $.ajax(
-                    {
-                        url:"/ajax",success: function(results){
-                            $('#container').append(results)
-                        }
-                    }
-                )
-            }
+                $.get("/ajax", {
+                    bike: document.getElementById('myForm').bike.value,
+                    country: document.getElementById('myForm').country.value
+                },function(results){
+                    $('#container').append(results)
+                }
+            )
+            }        
         </script>
     </body>
 </html>
