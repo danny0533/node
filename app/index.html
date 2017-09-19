@@ -1,2 +1,34 @@
-<H1>Hello World</H1>
-<h2>Yo</h2>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+            </ul>
+        </nav>
+    </head>
+    <body>
+        <p>This is Home</p>
+        <form id="myForm">
+            <input type="text" name="bike"/>
+            <input type="text" name="country"/>
+            <button type="button">Submit</button>
+        </form>
+        <div id="container"></div>
+        <script>
+            $('button').click(function(){
+                ajaxMe();
+            })
+
+            function ajaxMe(){
+                $.ajax(
+                    {
+                        url:"/ajax",success: function(results){
+                            $('#container').append(results)
+                        }
+                    }
+                )
+            }
+        </script>
+    </body>
+</html>
